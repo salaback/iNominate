@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/contests/search', 'ContestController@getSearch')->name('contests.search');
 Route::post('/contests/search', 'ContestController@postSearch');
 Route::resource('contests', 'ContestController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
