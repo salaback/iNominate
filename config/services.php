@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
+        'model' => inom\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => env('FB_ID'),
         'client_secret' => env('FB_SECRET'),
-        'redirect' => url('login/facebook/callback')
+        'redirect' => env('FB_REDIRECT')
     ]
 
 ];
