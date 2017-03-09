@@ -14,11 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/contests/search', 'ContestController@getSearch')->name('contests.search');
-Route::post('/contests/search', 'ContestController@postSearch');
-Route::resource('contests', 'ContestController');
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
