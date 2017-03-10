@@ -22,3 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::resources([
+    'nomination' => 'NominationController'
+]);
+
