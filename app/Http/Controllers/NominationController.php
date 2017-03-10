@@ -37,7 +37,7 @@ class NominationController extends Controller
     {
         $nom = $nomination->nominate($request->all());
 
-        dd($nom);
+        return redirect(route('nomination.show', [$nom->id]));
     }
 
     /**
@@ -48,7 +48,10 @@ class NominationController extends Controller
      */
     public function show($id)
     {
-        //
+        $nom = \inom\Nomination::find($id);
+
+        return view('nomination.show', compact('nom'));
+
     }
 
     /**

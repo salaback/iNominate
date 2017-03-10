@@ -89,6 +89,44 @@
             </div>
         </div>
 
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-title">Nomination Support</span>
+            </div>
+            <div class="panel-body">
+                <h3>How can you support a campaign?</h3>
+                <input type="checkbox" value="1" name="walk">
+                <label for="walk">I can go door to door to speak to voters.</label>
+                <br>
+                <input type="checkbox" value="1" name="call">
+                <label for="call">I can call and speak to voters by phone.</label>
+                <br>
+                <input type="checkbox" value="1" name="host">
+                <label for="host">I can host a fundraiser and invite people.</label>
+                <br>
+                <input type="checkbox" value="1" name="yardSign">
+                <label for="yardSign">I can put a yard sign in front of my home.</label>
+                <br>
+                <input type="checkbox" value="1" name="sign">
+                <label for="sing">I will sign nomination paperwork.</label>
+                <br>
+                <label for="donate">How much would you be willing to donate to a campaign for this office?</label>
+                <div class="input-group">
+                    <div class="input-group-addon">$</div>
+                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="50">
+                    <div class="input-group-addon">.00</div>
+                </div>
+                <span id="helpBlock" class="help-block">Your specific donation pledge won't be shared, but is only
+                to help potential candidates to understand the amount of campaign support that may be available.</span>
+
+                <label for="issues">What are some of the issues which are important to you in this campaign?</label>
+                <textarea name="issues" id="" cols="30" rows="5" class="form-control"></textarea>
+                <span id="helpBlock" class="help-block">This will be shared with other supporters and potential candidates.</span>
+
+
+            </div>
+        </div>
+
         <input type="submit" class='btn btn-primary' value="Preview Nomination">
     </form>
 
@@ -100,6 +138,10 @@
 @endpush
 
 @push('scripts')
+<script
+        src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
 <script src="{{'/js/bootstrap-datepicker.min.js'}}"></script>
 <script>
 

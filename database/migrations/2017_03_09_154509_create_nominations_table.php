@@ -23,12 +23,14 @@ class CreateNominationsTable extends Migration
             $table->boolean('call')->default(false);
             $table->boolean('host')->default(false);
             $table->boolean('yardSign')->default(false);
-            $table->string('sign')->nullable();
+            $table->boolean('sign')->nullable();
             $table->boolean('fbShare')->default(false);
             $table->boolean('twShare')->default(false);
             $table->float('donate')->nullable();
             $table->dateTime('confirmed')->nullable();
-            $table->json('issues')->nullable();
+            $table->dateTime('sent')->nullable();
+            $table->text('issues')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

@@ -117,7 +117,7 @@ class NominationTest extends TestCase
         $nominee = Nominee::create($this->nominee);
         $office = Office::create($this->office);
         $tree = $this->nomination->createTree($nominee->id, $office->id);
-        $return = $this->nomination->createNomination($nominee->id, $tree);
+        $return = $this->nomination->createNomination($nominee->id, $tree, []);
 
         $test = \inom\Nomination::where('nominee_id', $nominee->id)->where('tree_id', $tree->id)->get();
 

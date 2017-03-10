@@ -28,7 +28,7 @@ class Nomination
         $tree = $this->createTree($nominee->id, $office->id);
 
         // create nomination
-        $nomination = $this->createNomination($nominee->id, $tree);
+        $nomination = $this->createNomination($nominee->id, $tree, $data);
 
         // return nomination
 
@@ -88,13 +88,14 @@ class Nomination
         return $tree;
     }
 
-    public function createNomination($nominee_id, $tree)
+    public function createNomination($nominee_id, $tree, $data)
     {
-        return \inom\Nomination::create([
-            'nominee_id' => $nominee_id,
-            'tree_id' => $tree->id,
-            'depth' => $tree->depth,
-            'user_id' => Auth::Id()
-        ]);
+        $data['nominee_id'] = $nominee_id;
+        $data['tree_id'] = $tree->id;
+        $data['depth'] = $tree->depth;
+        $data['user_id'] = Auth::Id();
+
+        return \inom\Nomination::create($data);
+
     }
 }
